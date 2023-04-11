@@ -1,7 +1,7 @@
 /* Global Variables */
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather?zip=";
 const key = "&appid=06f8dc466efbb4ca2643f785d8938994&units=metric";
-const zipcode = document.getElementById("zip").value;
+const zipcode = document.getElementById("zip");
 
 const button = document.getElementById("generate");
 const error = document.getElementById("error");
@@ -14,7 +14,7 @@ const newDate = d.getMonth() + 1 + "." + d.getDate() + "." + d.getFullYear();
 button.addEventListener("click", mainFunction);
 
 function mainFunction(e) {
-  getWeatherData(baseUrl, zipcode, key).then((data) => {
+  getWeatherData(baseUrl, zipcode.value, key).then((data) => {
     const feelings = document.getElementById("feelings").value;
 
     // Show error message to user
